@@ -2,7 +2,7 @@ steps:
   - label: ":eslint: Lint"
     command: .build/run eslint
   - label: ":prettier: Format"
-    command: .build/run prettier
+    command: .build/run prettier --check "**"
   - label: ":typescript: Typecheck"
     command: .build/run typescript
   - label: ":jest: Test"
