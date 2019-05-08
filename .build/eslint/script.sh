@@ -2,6 +2,6 @@
 set -euo pipefail
 set -f # disable automatic globbing
 
-npm install --quiet
+npm install --quiet --production
 # shellcheck disable=SC2068
-/node_modules/.bin/jest $@
+/node_modules/.bin/eslint $@ --ext=ts,tsx --cache
