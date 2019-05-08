@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+set -f # disable automatic globbing
+
+# CI=${CI:-false}
+# CWD=${INIT_CWD:-$PWD}
+
+REPO=$(basename "$PWD")
+ARGS=${*:2}
+NAME="$REPO-$1"
+
+docker build -q -f "./.build/$1/Dockerfile" -t "$NAME" . > /dev/null
+# shellcheck disable=SC2086
+docker run --name "$NAME" --rm -it -p 8000:8000 -p 8080:8080 -v "$PWD:/workdir" "$NAME" $ARGS

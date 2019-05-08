@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+
+cd "./.build/$1/"
+npm install --package-lock-only

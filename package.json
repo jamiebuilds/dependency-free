@@ -1,0 +1,31 @@
+{
+	"name": "dependency-free",
+	"description": "An experiment to unify/speed up CI/local development via small Docker containers",
+	"license": "MIT",
+	"repository": "jamiebuilds/dependency-free",
+	"scripts": {
+		"setup": ".build/run setup",
+		"lint": ".build/run eslint",
+		"format": ".build/run prettier",
+		"build": ".build/run parcel",
+		"typecheck": ".build/run typescript",
+		"test": ".build/run jest",
+		"dev": ".build/run parcel serve src/index.html"
+	},
+	"dependencies": {
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"emotion": "^10.0.9"
+	},
+	"devDependencies": {
+		"@types/jest": "^24.0.12",
+		"@types/react": "^16.8.17",
+		"@types/react-dom": "^16.8.4",
+		"babel-eslint": "^10.0.1",
+		"eslint": "^5.16.0",
+		"eslint-plugin-react": "^7.13.0",
+		"jest-dom": "^3.2.1",
+		"react-testing-library": "^7.0.0",
+		"typescript": "^3.4.5"
+	}
+}

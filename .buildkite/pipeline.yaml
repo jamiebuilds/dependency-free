@@ -1,0 +1,13 @@
+steps:
+  - label: ":eslint: Lint"
+    command: .build/run eslint
+  - label: ":prettier: Format"
+    command: .build/run prettier
+  - label: ":typescript: Typecheck"
+    command: .build/run typescript
+  - label: ":jest: Test"
+    command: .build/run jest
+  - label: ":parcel: Build"
+    command: .build/run parcel
+    artifact_paths:
+      - "dist/**/*"

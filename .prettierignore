@@ -1,0 +1,9 @@
+.*ignore
+*.sh
+*Dockerfile
+package-lock.json
+.build/run
+.build/update
+dist
+.cache
+.eslintcache
