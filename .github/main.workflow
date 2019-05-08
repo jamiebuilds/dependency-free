@@ -1,6 +1,6 @@
-workflow "New workflow" {
-  on = "push"
+workflow "CI" {
   resolves = ["Format", "Lint", "Typecheck", "Test", "Build"]
+  on = "push"
 }
 
 action "Lint" {
